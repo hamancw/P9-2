@@ -11,6 +11,15 @@ bool isSortedIncreasing(const int arr[], int size) {
     return true;
 }
 
+bool isSortedDecreasing(const int arr[], int size) {
+    for (int i = 0; i < size - 1; ++i) {
+        if (arr[i] < arr[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
     const int SIZE = 6;
     int arr[SIZE];
@@ -25,5 +34,12 @@ int main() {
     }
     else {
         cout << "The data are not increasing." << endl;
+    }
+
+    if (isSortedDecreasing(arr, SIZE)) {
+        cout << "The data are decreasing." << endl;
+    }
+    else {
+        cout << "The data are not decreasing." << endl;
     }
 }
