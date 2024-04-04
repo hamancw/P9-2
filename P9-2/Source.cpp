@@ -29,6 +29,17 @@ bool hasAdjacentDuplicates(const int arr[], int size) {
     return false;
 }
 
+bool hasDuplicates(const int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        for (int j = i + 1; j < size; ++j) {
+            if (arr[i] == arr[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 int main() {
     const int SIZE = 6;
     int arr[SIZE];
@@ -57,5 +68,12 @@ int main() {
     }
     else {
         cout << "The data does not have adjacent duplicates." << endl;
+    }
+
+    if (hasDuplicates(arr, SIZE)) {
+        cout << "The data has duplicates." << endl;
+    }
+    else {
+        cout << "The data does not have duplicates." << endl;
     }
 }
